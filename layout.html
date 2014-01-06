@@ -1,0 +1,34 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+
+
+<f:layout name="Default" />
+	<v:asset.style name="01_fonts" path="http://fast.fonts.net/cssapi/11e1a2dd-8f61-4e6b-9560-3307feb08d41.css" external="TRUE" standalone="TRUE" />
+	<v:asset.style name="02_mainstyle" path="{f:uri.resource(path: 'Stylesheets/style.css', extensionName: 'skin_wingaslwl')}" external="TRUE" />
+	<v:asset.script name="modernizr" path="{f:uri.resource(path: 'JavaScripts/modernizr-2.6.2.min.js', extensionName: 'skin_wingaslwl')}" external="TRUE" standalone="TRUE" allowMoveToFooter="FALSE" namedChunks="1" />
+
+	<!--<t3jquery:AddJQuery />-->
+	
+	<v:asset.script name="01_hoverIntend" path="{f:uri.resource(path: 'JavaScripts/jquery.hoverIntent.minified.js', extensionName: 'skin_wingaslwl')}" external="TRUE" namedChunks="1" />
+	<v:asset.script name="02_formValidator" path="{f:uri.resource(path: 'JavaScripts/ui.formValidator.js', extensionName: 'skin_wingaslwl')}" external="TRUE" namedChunks="1" />
+	<v:asset.script name="03_skin" path="{f:uri.resource(path: 'JavaScripts/skin.js', extensionName: 'skin_wingaslwl')}" external="TRUE" namedChunks="1" />
+	
+<div id="pageWrap">
+	<header id="header">
+		<f:render section="Header" />
+	</header>
+
+	<section id="feature">
+		<f:render section="FeatureContent" />
+	</section>
+
+	<section id="mainContent">
+		<f:render section="MainContent" />
+	</section>
+</div>
+
+	<footer id="footer">
+		<f:render section="Footer" />
+	</footer>
+	
+
+	

@@ -1,0 +1,104 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="Default" />
+<f:section name="Header">
+	<div id="headerWrap">
+		<div id="headerInnerWrap">
+			<div id="logo">
+				<f:cObject typoscriptObjectPath="lib.wingasLogo" />
+			</div>
+			<div id="topMenu">
+				<v:page.menu pageUid="{topMenuId}" linkActive="1" linkCurrent="1" substElementUid="0" />
+				<div id="langMenu">
+					<!--<v:page.languageMenu defaultLanguageLabel="de" linkCurrent="1" hideNotTranslated="false" layout="name" />-->
+					<span style="color: #AAAAAA; font-weight: bold; position: relative; top: 3px; margin-right: 10px; margin-left: 10px;" >de | en</span>
+				</div>   
+				<div class="searchBoxSlide">
+					<f:cObject typoscriptObjectPath="lib.headersearch" />
+				</div>
+				<div id="searchBox">
+					<f:image src="EXT:skin_wingaslwl/Resources/Public/Images/Styles/icons/search_lupe.png" alt="Suche" />
+				</div>
+			</div>
+		</div>
+		<div id="mainMenuWrap">
+			<f:cObject typoscriptObjectPath="lib.mainMenu" />
+		</div>
+		<div id="mainMenuUnderLayer"></div>
+	</div>
+</f:section>
+<f:section name="FeatureContent">
+	<div id="featureWrap">
+		<div id="featureContent">
+			<!-- TYPO3SEARCH_begin -->
+			<f:if condition="{data.backend_layout} == 0">
+				<f:then>
+					<v:page.content.render column="{featureContentColumnId}" slide="-1" />
+				</f:then>
+				<f:else>
+					<v:page.content.render column="{homeMapContentColumnId}" />
+				</f:else>
+			</f:if><!-- TYPO3SEARCH_end -->
+		</div>
+	</div>
+</f:section>
+<f:section name="MainContent">
+	<div id="contentWrap">
+		<div class="breadCrumb">
+			<f:cObject typoscriptObjectPath="lib.rootlineMenu" />
+		</div>
+		<div id="content">
+			<!-- TYPO3SEARCH_begin --><v:page.content.render column="{mainContentColumnId}" /><!-- TYPO3SEARCH_end -->
+		</div>
+		
+		<div id="shareButton">
+			<f:cObject typoscriptObjectPath="lib.sharebuttons" />
+			<div id ="like">
+				<span class="recommend_2">
+					<f:translate key="LLL:EXT:skin_wingaslwl/Resources/Private/Language/locallang.xml:recommend_2"></f:translate>
+				</span>
+				<span class="recommend_1">
+					<f:translate key="LLL:EXT:skin_wingaslwl/Resources/Private/Language/locallang.xml:recommend_1"></f:translate>
+				</span>
+
+			</div>	
+			<f:cObject typoscriptObjectPath="tt_content.list.20.paquickvote_votes" />				
+		</div>
+	</div>
+</f:section>
+<f:section name="Footer">
+	<div id="footerWrap">
+		<div id="footerGrafixWrap"></div>
+		<div id="footerSitemap">
+			<f:cObject typoscriptObjectPath="lib.footerSitemap" />
+		</div><hr/>
+		<div id="footerCopyright">
+			<div id="footerCopyrightWrap">
+				<div id="disturbanceButton">
+					<f:link.page section="footerFormWrap" title="{f:translate(key:'LLL:EXT:skin_wingaslwl/Resources/Private/Language/locallang.xml:disturbance')}">
+						<f:translate key="LLL:EXT:skin_wingaslwl/Resources/Private/Language/locallang.xml:disturbance" />
+					</f:link.page>
+				</div>
+				<div id="copyRight">
+					<div class="crLogo">
+						<a href="http://www.wingas.com" target="_blank" title="wingas.com"><f:image src="EXT:skin_wingaslwl/Resources/Public/Images/footer_wingas_logo.png" alt="WINGAS GmbH" /></a>
+					</div>
+					<div class="crText">
+						<f:translate key="LLL:EXT:skin_wingaslwl/Resources/Private/Language/locallang.xml:copyrightText" />
+						<br/>
+						<f:translate key="LLL:EXT:skin_wingaslwl/Resources/Private/Language/locallang.xml:copyrightVisit" /> <a href="http://www.wingas.com" target="_blank" title="wingas.com">www.wingas.com</a>
+						<!--<v:page.content.render pageUid="{copyRightContentMenuId}" />-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footerFormWrap">
+		<hr class="shadow" />
+		<div id="footerDisturbanceForm">
+			<v:page.content.render pageUid="{disturbanceContentMenuId}" />
+		</div>
+	</div>
+	<div id="footerMenu">
+		<v:page.menu pageUid="{footerMenuId}" substElementUid="0" />
+	</div>
+</f:section>
