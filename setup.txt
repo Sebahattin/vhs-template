@@ -1,0 +1,66 @@
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:skin_wingaslwl/Resources/Private/TypoScript/System/setup_includes.ts">
+
+# Read in the templates for the extensions.
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:skin_wingaslwl/Resources/Private/TypoScript/Layout/MainMenu.ts">
+
+
+page = PAGE
+page.typeNum = 0
+page.10 = FLUIDTEMPLATE
+page.10 {
+	file = {$plugin.tx_skin_wingaslwl.view.templateRootPath}Default.html
+	partialRootPath = {$plugin.tx_skin_wingaslwl.view.partialRootPath}
+	layoutRootPath = {$plugin.tx_skin_wingaslwl.view.layoutRootPath} 
+	variables {
+
+		homeId = TEXT
+		homeId.value = {$siteconf.home}
+		mainMenuId = TEXT
+		mainMenuId.value = {$siteconf.menu.main}
+		europaMenuId = TEXT
+		europaMenuId.value = {$siteconf.menu.europa}
+		topMenuId = TEXT
+		topMenuId.value = {$siteconf.menu.top}
+		subMenuId = TEXT
+		subMenuId.value = {$siteconf.menu.sub}
+		mainContentColumnId = TEXT
+		mainContentColumnId.value = {$siteconf.mainContentColumn}		
+		featureContentColumnId = TEXT
+		featureContentColumnId.value = {$siteconf.featureContentColumn}
+		homeMapContentColumnId = TEXT
+		homeMapContentColumnId.value = {$siteconf.homeMapContentColumn}
+		footerContentMenuId = TEXT
+		footerContentMenuId.value = {$siteconf.footerContentMenu}
+		footerMenuId = TEXT
+		footerMenuId.value = {$siteconf.menu.footer}
+		copyRightContentMenuId = TEXT
+		copyRightContentMenuId.value = {$siteconf.copyRightContentMenu}
+		disturbanceContentMenuId = TEXT
+		disturbanceContentMenuId.value = {$siteconf.disturbanceContentMenu}
+		skinname = TEXT
+		skinname.value = {$siteconf.skinname}
+		siteTitle = TEXT
+		siteTitle.value = {$siteconf.siteTitle}
+		logoTitleText = TEXT
+		logoTitleText.value = {$siteconf.logo.titletext}
+		copyrighturl = TEXT
+		copyrighturl.value = {$siteconf.copyrighturl}
+		#googleTagManagerId = TEXT
+		#googleTagManagerId.value = {$siteconf.id.googleTagManager}
+	}
+  
+}
+
+# Home
+[globalVar = TSFE:id = {$siteconf.home}]
+	page.bodyTag = <body id="home">
+[global]
+
+[globalVar = GP:L = 1]
+	page.bodyTag = <body class="en">
+[global]
+
+# for Feedbackmodul position - "yes" and "no" 
+[globalVar = GP:L = 1] && [globalVar = TSFE:id = {$siteconf.home}]
+	page.bodyTag = <body class="en" id="home">
+[global]

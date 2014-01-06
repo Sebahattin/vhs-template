@@ -1,0 +1,10 @@
+# INCLUDES
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:skin_wingaslwl/Resources/Private/TypoScript/System/const_includes.ts">
+
+plugin.tx_skin_wingaslwl {
+	view {
+		templateRootPath = EXT:skin_wingaslwl/Resources/Private/Templates/
+		partialRootPath = EXT:skin_wingaslwl/Resources/Private/Partials/
+		layoutRootPath = EXT:skin_wingaslwl/Resources/Private/Layouts/
+	}
+}
